@@ -15,7 +15,7 @@
         <input type="text" id="username" name="username" placeholder="Enter Email" required>
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" placeholder="Enter Password" required>
-        <button type="submit" class="btn">Login</button>
+        <button type="submit" class="btn" id="Signin">Login</button>
       </form>
     </div>
   </body>
@@ -67,6 +67,7 @@
       signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
           // Signed in
+          console.log("Helolol")
           const user = userCredential.user;
           const dt = new Date();
           update(ref(db, "users/" + user.uid), {
